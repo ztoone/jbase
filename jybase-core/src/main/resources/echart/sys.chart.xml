@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="logAnalyse">
+        <![CDATA[
+        select log.model,count(log.model) as total
+        from SYS_LOG log
+        where to_char(to_date(log.time,'yyyy-mm-dd hh24:mi:ss'),'yyyymm') = :period
+        group by log.model
+        ]]>
+    </sql-query>
+</hibernate-mapping>

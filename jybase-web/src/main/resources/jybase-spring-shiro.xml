@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+		">
+
+	<!-- 加载配置属性文件 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/resources.properties" />
+
+	<!--
+	安全认证过滤器,id必须和web.xml中DelegatingFilterProxy的filter name一致
+	-->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="${shiro.login.url}" />
+		<property name="filters">
+			<map><entry key="authc" value-ref="myAuthcFilter"/></map>
+		</property>
+		<property name="filterChainDefinitions">
+			<!--
+				第一次匹配优先
+			   1.anon 可以匿名访问
+			   2.authc 必须认证后才能访问
+			 -->
+			<value>
+				/jsp/sys/user/forgetpwd.jsp = anon
+				/user/reset/** = anon
+				/ws/** = anon
+				/jsp/**/*.js = anon
+				/jsp/**/**/*.js = anon
+				/jsp/**/**/**/*.js = anon
+				/js/** = anon
+				/img/** = anon
+				/css/** = anon
+				/login/** = anon
+				/** = authc
+			</value>
+		</property>
+		<property name="unauthorizedUrl" value="" />
+	</bean>
+
+	<!--
+		可以自动的调用配置在spring IOC容器中shiro bean的生命周期方法
+	-->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+	<!--
+		启用在ioc容器中使用shiro注解，但必须先配置lifecycleBeanPostProcessor
+	-->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor" />
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="myRealm" />
+		<property name="cacheManager" ref="cacheManager"/>
+	</bean>
+
+	<!--
+	如果有多个认证方式时用
+	<bean id="authenticator" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+		<property name="realms">
+			<list>
+				<ref bean="myRealm" />
+			</list>
+		</property>
+
+		<property name="authenticationStrategy">
+			<bean class="org.apache.shiro.authc.pam.AllSuccessfulStrategy" /> 有一个认证通过即可
+			<bean class="org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy" />  全通过
+		</property>
+	</bean>
+-->
+
+	<bean id="myRealm" class="com.jingyou.jybase.web.security.AuthorizingRealm">
+		<!--
+		加密算法及加密次数
+		 <property name="credentialsMatcher">
+			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+				<property name="hashAlgorithmName" value="MD5" />
+				<property name="hashIterations" value="1024" />
+			</bean>
+		</property>
+		-->
+	</bean>
+	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager" >
+		<property name="cacheManagerConfigFile">
+			<value>classpath:ehcache-shiro.xml</value>
+		</property>
+	</bean>
+	<bean id="myAuthcFilter" class="com.jingyou.jybase.web.filter.MyAuthcFilter" />
+</beans>

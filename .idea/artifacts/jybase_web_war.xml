@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jybase-web:war">
+    <output-path>$PROJECT_DIR$/jybase-web/target</output-path>
+    <root id="archive" name="jybase-web.war">
+      <element id="artifact" artifact-name="jybase-web:war exploded" />
+    </root>
+  </artifact>
+</component>

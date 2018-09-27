@@ -1,0 +1,75 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/jsp/common/include.jsp" %>
+<script type="text/javascript" src="${ctx}/jsp/sys/resource/resource.js"></script>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>添加菜单</title>
+</head>
+<script>
+    $(function(){
+       loadResourceTree();
+    });
+</script>
+<body>
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'center',border:false">
+        <form id="addForm" style="padding-top:10px;padding-left:15px;">
+            <table id="res_tab" width="90%">
+                <tr>
+                    <td>上级资源：</td>
+                    <td>
+                    <input id="resourceTree" name="pid" class="easyui-combotree" style="width:60%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>资源名称：</td>
+                    <td>
+                        <input type="text" class="easyui-validatebox" name="name" maxlength="50" data-options="required:true" style="width: 60%;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>链接地址：</td>
+                    <td>
+                        <input type="text" class="easyui-validatebox" name="url" maxlength="100" style="width: 60%;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>图标/样式：</td>
+                    <td>
+                        <input type="text" class="easyui-validatebox" name="icon" maxlength="20" data-options="required:true" style="width: 60%;vertical-align: middle;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>排序：</td>
+                    <td>
+                        <input type="text" class="easyui-validatebox" name="order" maxlength="100" data-options="required:true" style="width: 50%;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>描述：</td>
+                    <td>
+                        <textarea class="easyui-textarea" class="easyui-textarea" rows="5" cols="21" name="desc" style="width: 100%;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>是否启用：</td>
+                    <td>
+                        <label>启用</label>
+                        <input type="radio" name="enabled" value="1" checked="checked"/>
+                        <label>不启用</label>
+                        <input type="radio" name="enabled" value="0"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div data-options="region:'south',border:false">
+        <div class="dialog-button">
+            <a id="ok" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="save()">确定</a>
+            <a id="cancel" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="window.parent.closeDialog();">取消</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

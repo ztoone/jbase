@@ -1,0 +1,24 @@
+*{font-size:12px;}
+.input-readonly{background: rgb(211, 211, 211);border:1px solid #0c0c0d
+}
+.textarea-readonly{color: rgb(84, 84, 84);}
+.table-border{background-color:rgb(192,213,242)}
+.table-content{height:24px;font-family:"宋体";font-size:12px;background-color: rgb(249,252,255)}
+.table-title{height:23px;color:#000000;font-family:"宋体";font-weight:300;word-break:keep-all;background-color:rgb(233,239,249)}
+span[class ~="datebox"]{width:200px;!important;}
+.order-parent{
+    display:inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('../../easyui/default/images/accordion_arrows.png');
+    vertical-align: middle;
+}
+.order-expend{
+    background-position:-15px 17px;
+}
+
+.order-hide{
+    background-position:-1px 17px;
+}
+
+.index-up{background:url("../../../img/icon/mini-top.gif") no-repeat;}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="jybase">
+    <defaultCache
+            maxElementsInMemory="1000"
+            eternal="false"
+            timeToIdleSeconds="3600"
+            timeToLiveSeconds="3600"
+            overflowToDisk="true">
+    </defaultCache>
+
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.UserBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.UserRoleBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.BtnBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.ResourceBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.RoleBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.RoleResBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.FilterBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+    <cache name="com.jingyou.jybase.framework.core.bean.sys.FilterItemBean" maxEntriesLocalHeap="100" eternal="false" overflowToDisk="true" maxEntriesLocalDisk="100000" />
+</ehcache>

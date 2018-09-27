@@ -1,0 +1,41 @@
+.icon-system{background:url("../../../img/icon/system_setting.png") no-repeat;}
+.icon-server{background:url("../../../img/icon/server.png") no-repeat;}
+.icon-logout{background:url("../../../img/icon/exit.gif") no-repeat;}
+.icon-ok{background:url("../../../img/icon/ok.png") no-repeat;}
+.icon-system-params{background:url("../../../img/icon/system_params.png") no-repeat;}
+.icon-filter{background:url("../../../img/icon/filter.png") no-repeat;}
+.icon-cfg{background:url("../../../img/icon/config.png") no-repeat;}
+.icon-root{background:url("../../../img/icon/root.png") no-repeat;}
+.icon-log{background:url("../../../img/icon/log.png") no-repeat;}
+.icon-add{background:url("../../../img/icon/add.png") no-repeat; !important;}
+.icon-remove{background:url("../../../img/icon/remove.png") no-repeat; !important;}
+.icon-full-screen{background:url("../../../img/icon/fullscreen.png") no-repeat;}
+
+.icon-res{background:url("../../../img/icon/resource/res.png") no-repeat;}
+.icon-res-add{background:url("../../../img/icon/resource/res_add.png") no-repeat;}
+.icon-res-del{background:url("../../../img/icon/resource/res_del.png") no-repeat;}
+.icon-res-edit{background:url("../../../img/icon/resource/res_edit.png") no-repeat;}
+.icon-res-btn{background:url("../../../img/icon/resource/res_btn.png") no-repeat;}
+
+.icon-org{background:url("../../../img/icon/org/org.png") no-repeat;}
+.icon-org-add{background:url("../../../img/icon/org/org_add.png") no-repeat;}
+.icon-org-del{background:url("../../../img/icon/org/org_del.png") no-repeat;}
+.icon-org-edit{background:url("../../../img/icon/org/org_edit.png") no-repeat;}
+.icon-org-err{background:url("../../../img/icon/org/org_err.png") no-repeat;}
+
+.icon-user{background:url("../../../img/icon/user/user.png") no-repeat;}
+.icon-user-add{background:url("../../../img/icon/user/user_add.png") no-repeat;}
+.icon-user-del{background:url("../../../img/icon/user/user_del.png") no-repeat;}
+.icon-user-edit{background:url("../../../img/icon/user/user_edit.png") no-repeat;}
+.icon-user-key{background:url("../../../img/icon/key.png") no-repeat;}
+
+
+.icon-role{background:url("../../../img/icon/role/role.png") no-repeat;}
+.icon-role-add{background:url("../../../img/icon/role/role_add.png") no-repeat;}
+.icon-role-del{background:url("../../../img/icon/role/role_del.png") no-repeat;}
+.icon-role-edit{background:url("../../../img/icon/role/role_edit.png") no-repeat;}
+
+.icon-chart{background:url("../../../img/icon/ehcart/chart.png") no-repeat;}
+.icon-chart-line{background:url("../../../img/icon/ehcart/chart_line.png") no-repeat;}
+.icon-dict{background:url("../../../img/icon/dict.png") no-repeat;}
+

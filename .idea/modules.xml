@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jybase.iml" filepath="$PROJECT_DIR$/jybase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jybase-common/jybase-common.iml" filepath="$PROJECT_DIR$/jybase-common/jybase-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jybase-core/jybase-core.iml" filepath="$PROJECT_DIR$/jybase-core/jybase-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jybase-service/jybase-service.iml" filepath="$PROJECT_DIR$/jybase-service/jybase-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jybase-web/jybase-web.iml" filepath="$PROJECT_DIR$/jybase-web/jybase-web.iml" />
+    </modules>
+  </component>
+</project>
